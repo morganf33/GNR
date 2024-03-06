@@ -1,0 +1,11 @@
+python /news_recommendation/data_process.py \
+--input_train_dev_news '/dataset/recsys/mind_train/news_ml.json' \
+--input_train_behaviors '/dataset/recsys/mind_train/behaviors_train_ml.json' \
+--input_dev_behaviors '/dataset/recsys/mind_train/behaviors_val_ml.json' \
+--input_test_news '/dataset/recsys/mind_test/news_ml.json' \
+--input_test_behaviors '/dataset/recsys/mind_test/behaviorsl_ml.json' \
+--output_train_dev_news '/dataset/recsys/mind_train/news.tsv' \
+--output_train_behaviors '/dataset/recsys/mind_train/behaviors_train.tsv' \
+--output_dev_behaviors '/dataset/recsys/mind_train/behaviors_val.tsv' \
+--output_test_news '/dataset/recsys/mind_test/news.tsv' \
+--output_test_behaviors '/dataset/recsys/mind_test/behaviors.tsv'
