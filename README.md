@@ -18,14 +18,14 @@ Code for "Generative News Generation". [Paper link]()
 >- output_file \["/dataset/recsys/mind_train/behaviors_train_ml.json", "/dataset/recsys/mind_train/behaviors_val_ml.json", "/dataset/recsys/mind_test/behaviorsl_ml.json", "/dataset/generator/mind_train/behaviors_ml.json", "/dataset/generator/mind_test/behaviors_ml.json"\]
 
 #### News Relationship Classifier
->- sh retrieval_data_process.sh
->- sh train_classifier.sh
->- sh select_event_news.sh
+>- sh /news_relationship_classifier/retrieval_data_process.sh
+>- sh /news_relationship_classifier/train_classifier.sh
+>- sh /news_relationship_classifier/select_event_news.sh
 
 #### News Recommendation
->- sh data_process.sh
->- sh train_plm4nr_title_abstract.sh
->- sh related_news_select.sh
+>- sh /news_recommendation/data_process.sh
+>- sh /news_recommendation/train_plm4nr_title_abstract.sh
+>- sh /news_recommendation/related_news_select.sh
 
 #### Personalized Multi-news Narrative Fusion
 >- python /prompt/personalized_narrative.py --api_key "your_api_key" --output_dir "/dataset/generator/mind_train" --output_file "/dataset/generator/mind_train/narrative_output.json" --input_file "/dataset/generator/mind_train/behaviors_rel.json"
