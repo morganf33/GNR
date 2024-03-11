@@ -1,6 +1,6 @@
 # GNR
 
-Code for "Generative News Generation". [Paper link]()
+Code for "Generative News Generation". [Paper link](https://arxiv.org/abs/2403.03424)
 
 #### Data preprocess
 >- waybackpack https://edition.cnn.com/politics -d './dataset/extract_news' --from-date 201901010000 --to-date 201912010000 --uniques-only
@@ -37,7 +37,7 @@ Code for "Generative News Generation". [Paper link]()
 
 
 #### Reference
-This code is implemented by the following opensource projects: [news_rec](https://github.com/YadaYuki/news-recommendation-llm), [SBERT](https://github.com/zhoujx4/NLP-Series-sentence-embeddings).
+This code is implemented based on the following opensource projects: [news_rec](https://github.com/YadaYuki/news-recommendation-llm), [SBERT](https://github.com/zhoujx4/NLP-Series-sentence-embeddings).
 
 
 
