@@ -19,6 +19,7 @@ from utils.logger import logging
 import argparse
 import os
 from utils.text import create_transform_fn_from_pretrained_tokenizer
+from pathlib import Path
 
 def evaluate(net: torch.nn.Module, eval_mind_dataset: MINDValDataset,
              device: torch.device) -> RecMetrics:
@@ -42,7 +43,7 @@ def evaluate(net: torch.nn.Module, eval_mind_dataset: MINDValDataset,
 
 def pred_to_tsv(args, test_file):
     save_dir = './data/temp_save/'
-    save_dir.mkdir(parents=True, exist_ok=True)
+    Path(save_dir).mkdir(parents=True, exist_ok=True)
     behavior_tsv_save_path = os.path.join(save_dir, 'behaviors.tsv')
     with open(behavior_tsv_save_path, 'wt') as out_file:
         tsv_writer = csv.writer(out_file, delimiter='\t')
