@@ -31,14 +31,31 @@ Code for "Generative News Generation". [Paper link](https://arxiv.org/abs/2403.0
 >- python /prompt/personalized_narrative.py --api_key "your_api_key" --output_dir "/dataset/generator/mind_train" --output_file "/dataset/generator/mind_train/narrative_output.json" --input_file "/dataset/generator/mind_train/behaviors_rel.json"
 >- python /prompt/personalized_narrative.py --api_key "your_api_key" --output_dir "/dataset/generator/mind_test" --output_file "/dataset/generator/mind_test/narrative_output.json" --input_file "/dataset/generator/mind_test/behaviors_rel.json"
 
+#### Generator Training
+>- python data_process.py --training_dataset '/dataset/generator/mind_train/narrative_output.json' --testing_dataset '/dataset/generator/mind_test/narrative_output.json' --training_save_path './dataset/sft_training_dataset.json' --testing_save_path './dataset/sft_testing_dataset.json'
+>- sh sft.sh
+>- sh generate_sft.sh
+>- sh export.sh
+>- python ranking_news.py --ori_test_path '/dataset/generator/mind_test/narrative_output.json' --prediction_path './sft_test/generated_predictions.jsonl' --save_path './dataset/uift_training_dataset.json' --checkpoint_dir 'your_path_2_recsys'
+>- sh uift.sh
+
 #### Evaluator
 >- python /narrative_evaluate/win_rate_evaluate.py --test_file_path 'narrative_output.json' --checkpoint_dir 'your_path_2_recsys'
 >- python /narrative_evaluate/consistency_rate_evaluate.py --output_dir "./consistency" --output_file "consistency_rate.json" --input_file "narrative_output.json" --api_key "your_api_key"
 
 
 #### Reference
-This code is implemented based on the following opensource projects: [news_rec](https://github.com/YadaYuki/news-recommendation-llm), [SBERT](https://github.com/zhoujx4/NLP-Series-sentence-embeddings).
+This code is implemented by the following opensource projects: [news_rec](https://github.com/YadaYuki/news-recommendation-llm), [SBERT](https://github.com/zhoujx4/NLP-Series-sentence-embeddings), [Llama-Factory](https://github.com/hiyouga/LLaMA-Factory), [RRHF](https://github.com/GanjinZero/RRHF).
 
+## Citation
+```text
+@article{gao2024generative,
+  title={Generative News Recommendation},
+  author={Gao, Shen and Fang, Jiabao and Tu, Quan and Yao, Zhitao and Chen, Zhumin and Ren, Pengjie and Ren, Zhaochun},
+  journal={arXiv preprint arXiv:2403.03424},
+  year={2024}
+}
+```
 
 
 
