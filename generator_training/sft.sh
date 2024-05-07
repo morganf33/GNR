@@ -1,0 +1,25 @@
+python /LLaMA-Factory-main/src/train_bash.py \
+--stage sft \
+--model_name_or_path llama-7b \
+--do_train \
+--dataset_dir '/dataset' \
+--dataset sft_training_dataset \
+--finetuning_type lora \
+--output_dir './sft_model/' \
+--overwrite_cache \
+--per_device_train_batch_size 16 \
+--gradient_accumulation_steps 8 \
+--max_source_length 1536 \
+--max_target_length 256 \
+--lr_scheduler_type cosine \
+--logging_steps 1 \
+--save_steps 10 \
+--learning_rate 1e-5 \
+--num_train_epochs 10.0 \
+--plot_loss \
+--bf16 \
+--evaluation_strategy steps \
+--eval_steps 10 \
+--dev_ratio 0.02 \
+--load_best_model_at_end
+
